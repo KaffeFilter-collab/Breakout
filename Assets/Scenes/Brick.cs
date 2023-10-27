@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using TMPro;
 public class Brick : MonoBehaviour
 {
     private static int activeBricks=0;
-   
+    public TextMeshProUGUI leveltxt;
+    public int level = 1;
     private void Awake(){
 
     activeBricks++;
@@ -21,7 +22,8 @@ public class Brick : MonoBehaviour
 
 
     if(activeBricks==0){
-
+            level++;
+            leveltxt.text = level.ToString();
   LoadNextScene();
     }
   }
