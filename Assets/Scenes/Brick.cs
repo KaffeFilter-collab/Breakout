@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class Brick : MonoBehaviour
 {
     private static int activeBricks=0;
-
-private void Awake(){
+   
+    private void Awake(){
 
     activeBricks++;
 }
@@ -17,6 +17,8 @@ private void Awake(){
   {
    activeBricks--;
     Destroy(gameObject);
+
+
 
     if(activeBricks==0){
 

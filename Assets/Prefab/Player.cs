@@ -5,15 +5,16 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    Rigidbody2D rigidbody2D;
+     Rigidbody2D rigidbody2d;
     public float speed;
     public float input;
     // Start is called before the first frame update
   
     private void Awake()
     {
-        rigidbody2D = GetComponent<Rigidbody2D>();
+        rigidbody2d = GetComponent<Rigidbody2D>();
     }
+
 
     // Update is called once per frame
     void Update()
@@ -23,7 +24,12 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rigidbody2D.velocity = new Vector2(input * speed,0);
+        GetComponent<Rigidbody2D>().velocity = new Vector2(input * speed,0);
 
     }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+             rigidbody2d.velocity = new Vector2(-rigidbody2d.velocity.x,rigidbody2d.velocity.y);
+         }
 }
