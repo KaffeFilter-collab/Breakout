@@ -28,7 +28,7 @@ public class Ball : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        rigidbody2d.velocity = new Vector2(rigidbody2d.velocity.x, rigidbody2d.velocity.y*-2);
+        rigidbody2d.velocity = new Vector2(-rigidbody2d.velocity.x,-rigidbody2d.velocity.y);
     }
 
   
