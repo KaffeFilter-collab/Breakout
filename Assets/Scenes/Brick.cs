@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace test {
 public class Brick : MonoBehaviour
 {
     private static int activeBricks=0;
@@ -19,10 +18,10 @@ private void Awake(){
    activeBricks--;
     Destroy(gameObject);
 
-    if(activeBricks==0){}
+    if(activeBricks==0){
 
-
-    
+  LoadNextScene();
+    }
   }
 
   //TODO move somwhere else maby
@@ -39,5 +38,4 @@ targetsceneindex=0;
 SceneManager.LoadScene(targetsceneindex);
 }
 
-}
 }
