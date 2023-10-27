@@ -19,17 +19,25 @@ public class Ball : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        print(collision.collider.gameObject.name);
-        rigidbody2d.velocity = new Vector2(rigidbody2d.velocity.x, rigidbody2d.velocity.y*-1);
-
+     if (collision.gameObject.GetComponent<Rigidbody2D>()) {
+            rigidbody2d.velocity = (rigidbody2d.velocity + collision.gameObject.GetComponent<Rigidbody2D>().velocity).normalized * rigidbody2d.velocity.magnitude;
+        }
 
 
     }
+   
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
+            if(collision.gameObject.name == "Collison wall top"){
+         rigidbody2d.velocity = new Vector2(-rigidbody2d.velocity.x,-rigidbody2d.velocity.y);
+            }
+    
+    else{
 
-        rigidbody2d.velocity = new Vector2(-rigidbody2d.velocity.x,-rigidbody2d.velocity.y);
+        rigidbody2d.velocity = new Vector2(-rigidbody2d.velocity.x,rigidbody2d.velocity.y);
+
+    }   
     }
-
   
 }

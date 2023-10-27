@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1284534624626205771, guid: 30914ec2decb53440babab7e61849c4e, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3730282444308322394, guid: 30914ec2decb53440babab7e61849c4e, type: 3}
       propertyPath: m_Name
       value: Collision wall Sides
@@ -201,11 +205,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7283508204351138022, guid: 5688557bbfd60414b8f996be92c318ae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.88
+      value: 4.48
       objectReference: {fileID: 0}
     - target: {fileID: 7283508204351138022, guid: 5688557bbfd60414b8f996be92c318ae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.58
+      value: 3.44
       objectReference: {fileID: 0}
     - target: {fileID: 7283508204351138022, guid: 5688557bbfd60414b8f996be92c318ae, type: 3}
       propertyPath: m_LocalPosition.z
@@ -277,11 +281,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7283508204351138022, guid: 5688557bbfd60414b8f996be92c318ae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.31
+      value: -3.68
       objectReference: {fileID: 0}
     - target: {fileID: 7283508204351138022, guid: 5688557bbfd60414b8f996be92c318ae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.09
+      value: 3.6
       objectReference: {fileID: 0}
     - target: {fileID: 7283508204351138022, guid: 5688557bbfd60414b8f996be92c318ae, type: 3}
       propertyPath: m_LocalPosition.z
@@ -324,6 +328,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1284534624626205771, guid: 30914ec2decb53440babab7e61849c4e, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3730282444308322394, guid: 30914ec2decb53440babab7e61849c4e, type: 3}
       propertyPath: m_Name
       value: Collision wall Sides (1)
@@ -381,6 +389,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1363173441270682474, guid: e12a00f796825a74884af3def754b614, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1493897884462575808, guid: e12a00f796825a74884af3def754b614, type: 3}
       propertyPath: m_Name
       value: Collison wall top
@@ -456,11 +468,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4798295560061909255, guid: 40b72af59a95f484e9d80e8999472cb6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.04
+      value: 0.16
       objectReference: {fileID: 0}
     - target: {fileID: 4798295560061909255, guid: 40b72af59a95f484e9d80e8999472cb6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.43
+      value: -3.54
       objectReference: {fileID: 0}
     - target: {fileID: 4798295560061909255, guid: 40b72af59a95f484e9d80e8999472cb6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -498,7 +510,8 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: 3ee07307598403d42aa96abb38077153, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2315426006225663466, guid: 40b72af59a95f484e9d80e8999472cb6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 40b72af59a95f484e9d80e8999472cb6, type: 3}
 --- !u!1001 &6356401036639339532
 PrefabInstance:
