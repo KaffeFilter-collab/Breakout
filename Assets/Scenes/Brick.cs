@@ -1,18 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
+namespace test {
 public class Brick : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private static int activeBricks=0;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+private void Awake(){
+
+    activeBricks++;
+}
+
+
+  private void  OnCollisionEnter2D(Collision2D collision) 
+  {
+   activeBricks--;
+    Destroy(gameObject);
+
+    if(activeBricks==0){}
+
+
+    
+  }
+
+  //TODO move somwhere else maby
+void LoadNextScene()
+{
+//Determin sceen index
+ int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+ int targetsceneindex= currentSceneIndex+1;
+//check if next sceen index is out of bounds
+if (targetsceneindex >=SceneManager.sceneCountInBuildSettings)
+{
+targetsceneindex=0;
+}
+SceneManager.LoadScene(targetsceneindex);
+}
+
+}
 }
