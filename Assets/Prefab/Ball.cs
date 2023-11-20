@@ -17,7 +17,7 @@ public class Ball : MonoBehaviour
 
     private void Start()
     {
-        life.text = 3.ToString();
+     
         GetComponent<Rigidbody2D>().velocity = initalVelocity;
     }
     private void OnCollisionEnter2D(Collision2D collision)
