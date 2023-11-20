@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class Brickplacer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public Brick brickPrefab;
+    public int AbstandY = 0;
+    public int AbstandX = 0;
+    
+    
+    private void Awake()
     {
-        
+        GameObject.FindAnyObjectByType<Gamemaster>().Brickspawner += Brickspawner_on;
     }
 
-    // Update is called once per frame
-    void Update()
+
+
+    private void Brickspawner_on(Brick newBrick)
     {
-        
+        Instantiate(brickPrefab, new Vector3(AbstandX, AbstandY), Quaternion.identity);
+
+
     }
+
+
 }

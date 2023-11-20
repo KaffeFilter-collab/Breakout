@@ -1,6 +1,8 @@
 using JetBrains.Annotations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class Gamemaster : MonoBehaviour
@@ -9,18 +11,15 @@ public class Gamemaster : MonoBehaviour
 
     public Brick brickPrefab;
     public int Brickamount=0;
-    public int AbstandY = 0;
-    public int AbstandX = 0;
-    
+    public  delegate void BrickspawnerDelegate(Brick newBrick);
+    public event BrickspawnerDelegate Brickspawner;
 
-    private void Brickspawn()
+    public void Brickspawn()
     {
 
         for (int i = 0;i < Brickamount + 1; i++)
         {
-
-            Instantiate(brickPrefab, new Vector3(AbstandX, AbstandY), Quaternion.identity,);
-            
+            Brickspawner?.Invoke(brickPrefab);              
         }
 
 
@@ -30,7 +29,7 @@ public class Gamemaster : MonoBehaviour
         Brickspawn();
     }
 
-
+    //  Instantiate(brickPrefab, new Vector3(AbstandX, AbstandY), Quaternion.identity,);
 
 
 
