@@ -53,8 +53,7 @@ public class Ball : MonoBehaviour
                 
                 //TODO make a gamemaster?/this is LP tracker
                 
-                Lifepoints--;
-                life.text = Lifepoints.ToString();
+               
 
 
             }
