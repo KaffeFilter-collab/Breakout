@@ -87,6 +87,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< Updated upstream
+=======
+--- !u!114 &1170980106508433555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6356401037557825519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96dc45b68fe8f5649b9243cd7e1c822d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  input: 0
+>>>>>>> Stashed changes
 --- !u!50 &7867374547368704897
 Rigidbody2D:
   serializedVersion: 4
