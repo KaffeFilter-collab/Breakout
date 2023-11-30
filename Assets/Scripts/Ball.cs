@@ -4,8 +4,7 @@ using UnityEngine;
 using TMPro;
 public class Ball : MonoBehaviour
 {
-    private int  Lifepoints= 3;
-    public TextMeshProUGUI life;
+    
     Rigidbody2D rigidbody2d;
     public Vector2 initalVelocity;
     public Vector3 startingposition;
