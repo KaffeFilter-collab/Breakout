@@ -29,7 +29,7 @@ public class Brick : MonoBehaviour
 
         if (activeBricks == 0)
         {
-            AllBricksdead.Invoke();
+            AllBricksdead?.Invoke();
 
         }
         Powerupspawn();

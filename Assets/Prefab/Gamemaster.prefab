@@ -45,12 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d84e555df2975de48b15c4660ea92b5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
   brickPrefab: {fileID: -5914652653751153059, guid: 5688557bbfd60414b8f996be92c318ae, type: 3}
   Brickamount: 0
-  i: 0
-  AbstandY: 0
-  AbstandX: 0
-  vector3: {x: 0, y: 0, z: 0}
+  scoretrack: {fileID: 6323884546790591804, guid: f151d37704870c1499844f85a4004634, type: 3}
 --- !u!114 &2495919763307551807
 MonoBehaviour:
   m_ObjectHideFlags: 0

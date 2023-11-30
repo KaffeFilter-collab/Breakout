@@ -12,10 +12,10 @@ public class Gamemaster : MonoBehaviour
 
     public int score = 0;
     public Brick brickPrefab;
-    public int Brickamount=0;
-    public  delegate void BrickspawnerDelegate(Brick newBrick);
+    public int Brickamount = 0;
+    public delegate void BrickspawnerDelegate(Brick newBrick);
     public event BrickspawnerDelegate Brickspawner;
-
+    private GameObject scoretrack;
 
 
 
@@ -23,8 +23,15 @@ public class Gamemaster : MonoBehaviour
     {
         GameObject.FindAnyObjectByType<Brick>().AllBricksdead += Gamemaster_AllBricksdead;
         GameObject.FindAnyObjectByType<Brick>().Brickshit += Gamemaster_Brickshit;
-        GameObject.FindAnyObjectByType<Powerups>().powerupcollected += Gamemaster_powerupcollected;
+        if (GameObject.FindAnyObjectByType<Powerups>())
+            GameObject.FindAnyObjectByType<Powerups>().powerupcollected += Gamemaster_powerupcollected;
 
+
+    }
+    private void Start()
+    {
+        scoretrack = GameObject.FindGameObjectWithTag("Score");
+        scoretrack.GetComponentInChildren<TMP_Text>().text = "Score: " + score;
 
     }
 
@@ -40,6 +47,7 @@ public class Gamemaster : MonoBehaviour
     {
         score++;
         Console.WriteLine(score.ToString());
+        scoretrack.GetComponentInChildren<TMP_Text>().text = "Score: " + score;
     }
 
     private void Gamemaster_AllBricksdead()
@@ -59,16 +67,13 @@ public class Gamemaster : MonoBehaviour
     public void Brickspawn()
     {
 
-        for (int i = 0;i < Brickamount + 1; i++)
+        for (int i = 0; i < Brickamount + 1; i++)
         {
-            Brickspawner?.Invoke(brickPrefab);              
+            Brickspawner?.Invoke(brickPrefab);
         }
 
 
     }
-    private void Start()
-    {
-        }
     private void stick()
     {
 
@@ -77,10 +82,12 @@ public class Gamemaster : MonoBehaviour
 
     private void laser()
     {
-        
+
     }
 
-    private void burning() { 
+    private void burning()
+    {
+
     }
 
 

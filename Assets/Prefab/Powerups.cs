@@ -22,7 +22,7 @@ public class Powerups : MonoBehaviour
         Player player = collision.gameObject.GetComponent<Player>();
         Powerup random = (Powerup) Random.Range(0, Powerup.GetNames(typeof(Powerup)).Length);
         print(random);
-        powerupcollected.Invoke(random);
+        powerupcollected?.Invoke(random);
         Destroy(gameObject);
     }
 
