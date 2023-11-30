@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aedcd426690427419894e953e098449, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brickPrefab: {fileID: 0}
-  AbstandY: 3
-  AbstandX: 1
+  brickPrefab: {fileID: -5914652653751153059, guid: 5688557bbfd60414b8f996be92c318ae, type: 3}
+  AbstandY: -2
+  AbstandX: 5

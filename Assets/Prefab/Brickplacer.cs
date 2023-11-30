@@ -6,8 +6,8 @@ public class Brickplacer : MonoBehaviour
 {
 
     public Brick brickPrefab;
-    public int AbstandY = 05;
-    public int AbstandX = 10;
+    public int AbstandY;
+    public int AbstandX;
     
     
     private void Awake()
@@ -34,3 +34,4 @@ public class Brickplacer : MonoBehaviour
 
 
 }
+                                                                                                                        

@@ -3,43 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System;
+
 public class Brick : MonoBehaviour
 {
-    private static int activeBricks=0;
-    public TextMeshProUGUI leveltxt;
+    private static int activeBricks = 0;
     public int level = 1;
-    private void Awake(){
+    public delegate void allbricksdead();
+    public event allbricksdead AllBricksdead;
+    public delegate void brickhit();
+    public event brickhit AllBrickshit;
 
-    activeBricks++;
-}
+    private void Awake()
+    {
 
-
-  private void  OnCollisionEnter2D(Collision2D collision) 
-  {
-   activeBricks--;
-    Destroy(gameObject);
-
-
-
-    if(activeBricks==0){
-            level++;
-            leveltxt.text = level.ToString();
-  LoadNextScene();
+        activeBricks++;
     }
-  }
 
-  //TODO move somwhere else maby
-void LoadNextScene()
-{
-//Determin sceen index
- int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
- int targetsceneindex= currentSceneIndex+1;
-//check if next sceen index is out of bounds
-if (targetsceneindex >=SceneManager.sceneCountInBuildSettings)
-{
-targetsceneindex=0;
-}
-SceneManager.LoadScene(targetsceneindex);
-}
 
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        activeBricks--;
+        AllBrickshit.Invoke();
+
+
+        if (activeBricks == 0)
+        {
+            AllBricksdead.Invoke();
+
+        }
+        Destroy(gameObject);
+
+        //TODO move somwhere else maby
+
+
+    }
 }
