@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Killzone
   - Topwall
+  - Score
   layers:
   - Default
   - TransparentFX
