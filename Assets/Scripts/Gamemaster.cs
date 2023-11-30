@@ -9,7 +9,7 @@ using TMPro;
 
 public class Gamemaster : MonoBehaviour
 {
-
+    private int lifepoints;
     public int score = 0;
     public Brick brickPrefab;
     public int Brickamount = 0;
