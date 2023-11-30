@@ -14,7 +14,7 @@ GameObject:
   m_Layer: 0
   m_Name: Gamemaster
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -48,7 +48,6 @@ MonoBehaviour:
   score: 0
   brickPrefab: {fileID: -5914652653751153059, guid: 5688557bbfd60414b8f996be92c318ae, type: 3}
   Brickamount: 0
-  scoretrack: {fileID: 6323884546790591804, guid: f151d37704870c1499844f85a4004634, type: 3}
 --- !u!114 &2495919763307551807
 MonoBehaviour:
   m_ObjectHideFlags: 0
