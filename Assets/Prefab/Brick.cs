@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using TMPro;
-using System;
+
+
 
 public class Brick : MonoBehaviour
 {
+    public GameObject powerup;
     private static int activeBricks = 0;
-    public int level = 1;
+    private float powerupchance = 0.3f;
     public delegate void allbricksdead();
     public event allbricksdead AllBricksdead;
     public delegate void brickhit();
-    public event brickhit AllBrickshit;
+    public event brickhit Brickshit;
 
     private void Awake()
     {
@@ -24,7 +24,7 @@ public class Brick : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D collision)
     {
         activeBricks--;
-        AllBrickshit.Invoke();
+        Brickshit?.Invoke();
 
 
         if (activeBricks == 0)
@@ -32,10 +32,17 @@ public class Brick : MonoBehaviour
             AllBricksdead.Invoke();
 
         }
+        Powerupspawn();
         Destroy(gameObject);
 
-        //TODO move somwhere else maby
 
+    }
 
+    private void Powerupspawn()
+    {
+        if (powerupchance>=Random.Range(0,1))
+        {
+            Instantiate(powerup,transform.position,Quaternion.identity);
+        }   
     }
 }

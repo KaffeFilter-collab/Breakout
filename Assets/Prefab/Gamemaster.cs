@@ -23,12 +23,23 @@ public class Gamemaster : MonoBehaviour
     {
         GameObject.FindAnyObjectByType<Brick>().AllBricksdead += Gamemaster_AllBricksdead;
         GameObject.FindAnyObjectByType<Brick>().Brickshit += Gamemaster_Brickshit;
+        GameObject.FindAnyObjectByType<Powerups>().powerupcollected += Gamemaster_powerupcollected;
+
+
+    }
+
+    private void Gamemaster_powerupcollected(Powerups.Powerup powerup)
+    {
+        if (powerup == Powerups.Powerup.stick) stick();
+        if (powerup == Powerups.Powerup.laser) laser();
+        if (powerup == Powerups.Powerup.burning) burning();
 
     }
 
     private void Gamemaster_Brickshit()
     {
         score++;
+        Console.WriteLine(score.ToString());
     }
 
     private void Gamemaster_AllBricksdead()
@@ -57,11 +68,21 @@ public class Gamemaster : MonoBehaviour
     }
     private void Start()
     {
-        Brickspawn();
+        }
+    private void stick()
+    {
+
+
     }
 
-    //  Instantiate(brickPrefab, new Vector3(AbstandX, AbstandY), Quaternion.identity,);
+    private void laser()
+    {
+        
+    }
+
+    private void burning() { 
+    }
 
 
-  
+
 }
