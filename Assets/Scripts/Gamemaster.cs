@@ -17,7 +17,7 @@ public class Gamemaster : MonoBehaviour
     public event BrickspawnerDelegate Brickspawner;
     private GameObject scoretrack;
     public delegate void Stickdelegate();
-    public event Stickdelegate sticke;
+    public event Stickdelegate sticke   ;
 
 
 
