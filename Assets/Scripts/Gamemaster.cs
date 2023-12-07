@@ -16,6 +16,8 @@ public class Gamemaster : MonoBehaviour
     public delegate void BrickspawnerDelegate(Brick newBrick);
     public event BrickspawnerDelegate Brickspawner;
     private GameObject scoretrack;
+    public delegate void Stickdelegate();
+    public event Stickdelegate sticke;
 
 
 
@@ -76,18 +78,18 @@ public class Gamemaster : MonoBehaviour
     }
     private void stick()
     {
-
+        Console.WriteLine("stick");
 
     }
 
     private void laser()
     {
-
+        Console.WriteLine("laser");
     }
 
     private void burning()
     {
-
+        Console.WriteLine("burning");
     }
 
 
