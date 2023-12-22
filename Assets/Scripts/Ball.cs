@@ -5,7 +5,6 @@ using TMPro;
 using UnityEngine.UI;
 public class Ball : MonoBehaviour
 {
-        private bool dead=false;
     Rigidbody2D rigidbody2d;
     public Vector2 initalVelocity;
     public Vector3 startingposition;
@@ -15,13 +14,9 @@ public class Ball : MonoBehaviour
         rigidbody2d = GetComponent<Rigidbody2D>();
     }
   
-    private void Update()
-    {
-        if(dead=true && Input.GetKeyDown(KeyCode.E)){
-            print("up");
-        }
+   
          
-    }
+    
     private void Start()
     {
      
@@ -53,17 +48,23 @@ public class Ball : MonoBehaviour
         rigidbody2d.velocity = new Vector2(-rigidbody2d.velocity.x,rigidbody2d.velocity.y);
 
             if (collision.GetComponent<Collider2D>().gameObject.CompareTag("Killzone"))
-            {
-                
-                rigidbody2d.velocity = new Vector2(rigidbody2d.velocity.x * 0, rigidbody2d.velocity.y * 0);
-                transform.position = startingposition;
-                dead=true;
-             //StartCoroutine(Waitforstart());
+            {               
+              StartCoroutine(death());
                 
             }
 
 
         }   
+    }
+    IEnumerator death()
+    {
+    rigidbody2d.velocity = new Vector2(rigidbody2d.velocity.x * 0, rigidbody2d.velocity.y * 0);
+    transform.position = startingposition;
+    while(!Input.GetKeyDown(KeyCode.Space))
+    {
+        yield return null;
+    }
+        rigidbody2d.velocity =initalVelocity;
     }
     
 }
