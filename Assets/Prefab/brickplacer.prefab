@@ -46,4 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brickPrefab: {fileID: -5914652653751153059, guid: 5688557bbfd60414b8f996be92c318ae, type: 3}
   AbstandY: 3
-  AbstandX: 1
+  AbstandX: 5

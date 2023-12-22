@@ -3,7 +3,13 @@
         "**/.DS_Store": true,
         "**/.git": true,
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         "**/.gitmodules": true,
+=======
+        "**/.vs": true,
+        "**/.gitmodules": true,
+        "**/.vsconfig": true,
+>>>>>>> Stashed changes
 =======
         "**/.vs": true,
         "**/.gitmodules": true,
@@ -54,12 +60,18 @@
         "obj/": true,
         "Obj/": true,
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         "ProjectSettings/": true,
 =======
+=======
+>>>>>>> Stashed changes
         "Logs/": true,
         "logs/": true,
         "ProjectSettings/": true,
         "UserSettings/": true,
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         "temp/": true,
         "Temp/": true

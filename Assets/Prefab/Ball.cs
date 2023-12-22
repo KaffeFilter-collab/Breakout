@@ -51,7 +51,7 @@ public class Ball : MonoBehaviour
                 rigidbody2d.velocity = new Vector2(rigidbody2d.velocity.x * 0, rigidbody2d.velocity.y * 0);
                 transform.position = startingposition;
                 
-                //TODO make a gamemaster?/this is LP tracker
+                
                 
                 Lifepoints--;
                 life.text = Lifepoints.ToString();

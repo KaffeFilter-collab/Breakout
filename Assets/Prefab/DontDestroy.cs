@@ -21,3 +21,15 @@ public class DontDestroy : MonoBehaviour {
         DontDestroyOnLoad(gameObject);
     }
 }
+//void LoadNextScene()
+
+//Determin sceen index
+ //int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+ //int targetsceneindex= currentSceneIndex+1;
+//check if next sceen index is out of bounds
+//if (targetsceneindex >=SceneManager.sceneCountInBuildSettings)
+//{
+//targetsceneindex=0;
+//}
+//SceneManager.LoadScene(targetsceneindex);
+

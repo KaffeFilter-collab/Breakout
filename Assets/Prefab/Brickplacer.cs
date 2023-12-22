@@ -27,7 +27,11 @@ using UnityEngine;
          
             for (int i = 0; i < 3; i++)
             {
+<<<<<<< Updated upstream
                 Instantiate(brickPrefab, new Vector3(AbstandX*(i+3), AbstandY*(y-1)), Quaternion.identity);
+=======
+                Instantiate(brickPrefab, new Vector3(AbstandX*(i+5), AbstandY*(y-2)), Quaternion.identity);
+>>>>>>> Stashed changes
                 
             }
             
