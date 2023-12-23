@@ -10,6 +10,10 @@ public class Ball : MonoBehaviour
     public Vector3 startingposition;
     private void Awake()
     {
+        GameObject.FindAnyObjectByType<Gamemaster>().fireon += Fireon;
+        GameObject.FindAnyObjectByType<Gamemaster>().stickon += Stickon;
+        GameObject.FindAnyObjectByType<Gamemaster>().laseron += Laseron;
+       
         startingposition =GetComponent<Rigidbody2D>().position;
         rigidbody2d = GetComponent<Rigidbody2D>();
     }
@@ -33,6 +37,19 @@ public class Ball : MonoBehaviour
 
     }
    
+    private  void Fireon() 
+    {
+        print("fire");
+    }
+    private  void Stickon() 
+    {
+        print("slime");
+    }
+    private  void Laseron() 
+    {
+        print("las");
+    }
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
