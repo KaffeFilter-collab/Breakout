@@ -16,20 +16,14 @@ public class Gamemaster : MonoBehaviour
     public delegate void BrickspawnerDelegate(Brick newBrick);
     public event BrickspawnerDelegate Brickspawner;
     private GameObject scoretrack;
-    public delegate void Stickdelegate();
-    public event Stickdelegate stickon;
-    public delegate void Laserdelegate();
-    public event Laserdelegate laseron;
-    public delegate void Firedelegate();
-    public event Firedelegate fireon;
+  
 
 
     private void Awake()
     {
         GameObject.FindAnyObjectByType<Brick>().AllBricksdead += Gamemaster_AllBricksdead;
         GameObject.FindAnyObjectByType<Brick>().Brickshit += Gamemaster_Brickshit;
-        if (GameObject.FindAnyObjectByType<Powerups>())
-            GameObject.FindAnyObjectByType<Powerups>().powerupcollected += Gamemaster_powerupcollected;
+       
 
 
     }
@@ -40,13 +34,7 @@ public class Gamemaster : MonoBehaviour
 
     }
 
-    private void Gamemaster_powerupcollected(Powerups.Powerup powerup)
-    {
-        if (powerup == Powerups.Powerup.stick) stick();
-        if (powerup == Powerups.Powerup.laser) laser();
-        if (powerup == Powerups.Powerup.burning) burning();
-
-    }
+   
 
     private void Gamemaster_Brickshit()
     {
@@ -79,24 +67,8 @@ public class Gamemaster : MonoBehaviour
 
 
     }
-    private void stick()
-    {
-        Console.WriteLine("stick");
-        stickon?.Invoke();
-
-    }
-
-    private void laser()
-    {
-        Console.WriteLine("laser");
-        laseron?.Invoke();
-    }
-
-    private void burning()
-    {
-        Console.WriteLine("burning");
-        fireon?.Invoke();
-    }
+    
+    
 
 
 

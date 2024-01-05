@@ -32,4 +32,24 @@ public class Player : MonoBehaviour
         {
              rigidbody2d.velocity = new Vector2(-rigidbody2d.velocity.x,rigidbody2d.velocity.y);
          }
+public void ApplyPowerup(Powerup powerup)
+    {
+        print("received powerup");
+
+        switch (powerup.type)
+        {
+            case Powerup.PowerupType.stick:
+                break;
+            
+            case Powerup.PowerupType.burning:
+                transform.localScale += Vector3.right * 0.25f;
+                break;
+            
+            case Powerup.PowerupType.laser:
+                transform.localScale -= Vector3.right * 0.25f;
+                break;
+            
+            
+        }
+    }
 }
