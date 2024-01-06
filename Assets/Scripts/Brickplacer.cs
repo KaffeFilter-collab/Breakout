@@ -19,12 +19,12 @@ public class Brickplacer : MonoBehaviour
 
     private void Brickspawner_on(Brick newBrick)
     {
-        for (int  y= 0; y < 3; y++) { 
+        for (int  y= -2; y < 2; y++) { 
         
          
             for (int i = 0; i < 3; i++)
             {
-                Instantiate(brickPrefab, new Vector3(AbstandX*(i+1), AbstandY*(y+1)), Quaternion.identity);
+                Instantiate(brickPrefab, new Vector3(AbstandX+(i+1), AbstandY+(y+1)), Quaternion.identity);
                 
             }
             

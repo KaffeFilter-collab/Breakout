@@ -16,13 +16,14 @@ public class Gamemaster : MonoBehaviour
     public delegate void BrickspawnerDelegate(Brick newBrick);
     public event BrickspawnerDelegate Brickspawner;
     private GameObject scoretrack;
-  
+    private int brickcounteramount=0;
 
 
     private void Awake()
     {
-        GameObject.FindAnyObjectByType<Brick>().AllBricksdead += Gamemaster_AllBricksdead;
+        GameObject.FindAnyObjectByType<Brick>().Brickspawn += Gamemaster_Counter;
         GameObject.FindAnyObjectByType<Brick>().Brickshit += Gamemaster_Brickshit;
+        Brickspawn();
        
 
 
@@ -41,20 +42,28 @@ public class Gamemaster : MonoBehaviour
         score++;
         Console.WriteLine(score.ToString());
         scoretrack.GetComponentInChildren<TMP_Text>().text = "Score: " + score;
-    }
-
-    private void Gamemaster_AllBricksdead()
-    {
-        //Determin sceen index
+        brickcounteramount--;
+            if(brickcounteramount==0){
+    
+     //Determin sceen index
+       
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int targetsceneindex = currentSceneIndex + 1;
+        
         //check if next sceen index is out of bounds
+       
         if (targetsceneindex >= SceneManager.sceneCountInBuildSettings)
         {
             targetsceneindex = 0;
         }
         SceneManager.LoadScene(targetsceneindex);
 
+            }
+    }
+
+    private void Gamemaster_Counter()
+    {
+            brickcounteramount++;
     }
 
     public void Brickspawn()
