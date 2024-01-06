@@ -21,10 +21,10 @@ public class Gamemaster : MonoBehaviour
 
     private void Awake()
     {
-        GameObject.FindAnyObjectByType<Brick>().Brickspawn += Gamemaster_Counter;
-        GameObject.FindAnyObjectByType<Brick>().Brickshit += Gamemaster_Brickshit;
-        Brickspawn();
-       
+      //  GameObject.FindAnyObjectByType<Brick>().Brickspawn += Gamemaster_Counter;
+       GameObject.FindAnyObjectByType<Brick>().Brickshit += Gamemaster_Brickshit;
+       // Brickspawn();
+       print("awake");
 
 
     }
@@ -35,17 +35,16 @@ public class Gamemaster : MonoBehaviour
 
     }
 
-   
-
+  
     private void Gamemaster_Brickshit()
     {
-        score++;
+        score=score+1;
         Console.WriteLine(score.ToString());
         scoretrack.GetComponentInChildren<TMP_Text>().text = "Score: " + score;
         brickcounteramount--;
-            if(brickcounteramount==0){
+            if(Brickamount==0){
     
-     //Determin sceen index
+        //Determin sceen index
        
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int targetsceneindex = currentSceneIndex + 1;
@@ -61,10 +60,10 @@ public class Gamemaster : MonoBehaviour
             }
     }
 
-    private void Gamemaster_Counter()
-    {
-            brickcounteramount++;
-    }
+    //private void Gamemaster_Counter()
+   // {
+       //     brickcounteramount++;
+   // }
 
     public void Brickspawn()
     {

@@ -259,7 +259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3310507385280068054, guid: f58aed25c3817fb4aa5831dff5190190, type: 3}
       propertyPath: Brickamount
-      value: 7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8639494132881680383, guid: f58aed25c3817fb4aa5831dff5190190, type: 3}
       propertyPath: m_LocalPosition.x

@@ -12,15 +12,16 @@ public class Brick : MonoBehaviour
     public event brickspawn Brickspawn;
     public delegate void brickhit();
     public event brickhit Brickshit;
+    static int Brickamount;
     
 
-    public void Awake(){
-        
-        Brickspawn?.Invoke();
-
+    public void Awake()
+    {
+        Brickamount++;
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
+        Brickamount--;
         Brickshit?.Invoke();
         Powerupspawn();
         Destroy(gameObject);
