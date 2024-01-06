@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1281044344180242205
+--- !u!1 &6227980219720913193
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,42 +8,44 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4601405645011668586}
-  - component: {fileID: 8887422046959982968}
+  - component: {fileID: 2403440923002501818}
+  - component: {fileID: 3576682037629838552}
   m_Layer: 0
-  m_Name: brickplacer
+  m_Name: Brickmanager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4601405645011668586
+--- !u!4 &2403440923002501818
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1281044344180242205}
+  m_GameObject: {fileID: 6227980219720913193}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.38466716, y: 0.12542714, z: 0.02309902}
+  m_LocalPosition: {x: -24.409664, y: 1.9490031, z: -3.5193038}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8887422046959982968
+--- !u!114 &3576682037629838552
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1281044344180242205}
+  m_GameObject: {fileID: 6227980219720913193}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7aedcd426690427419894e953e098449, type: 3}
+  m_Script: {fileID: 11500000, guid: 094dc9a3388422a408419078421dd84d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rows: 3
+  columns: 5
+  horizontalSpacing: 0.5
+  verticalSpacing: 0.25
   brickPrefab: {fileID: -5914652653751153059, guid: 5688557bbfd60414b8f996be92c318ae, type: 3}
-  AbstandY: 1
-  AbstandX: 1

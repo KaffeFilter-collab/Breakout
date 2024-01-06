@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
+    
      Rigidbody2D rigidbody2d;
     public float speed;
     public float input;
-    // Start is called before the first frame update
-  
+
+    public delegate void stickdelegate();
+    public event stickdelegate Stick;
     private void Awake()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
@@ -28,28 +30,31 @@ public class Player : MonoBehaviour
 
     }
 
-        private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
         {
              rigidbody2d.velocity = new Vector2(-rigidbody2d.velocity.x,rigidbody2d.velocity.y);
          }
+     
+
 public void ApplyPowerup(Powerup powerup)
     {
-        print("received powerup");
-
         switch (powerup.type)
         {
             case Powerup.PowerupType.stick:
+                Stick?.Invoke();
                 break;
             
             case Powerup.PowerupType.burning:
-                transform.localScale += Vector3.right * 0.25f;
+                 print("B powerup");
                 break;
             
             case Powerup.PowerupType.laser:
-                transform.localScale -= Vector3.right * 0.25f;
+                 print("L powerup");
                 break;
             
-            
+            default:
+                print("no");
+                    break;
         }
     }
 }

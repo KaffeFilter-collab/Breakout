@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 public class Ball : MonoBehaviour
 {
+    private bool stick=false;
     Rigidbody2D rigidbody2d;
     public Vector2 initalVelocity;
     public Vector3 startingposition;
@@ -13,6 +14,7 @@ public class Ball : MonoBehaviour
        
         startingposition =GetComponent<Rigidbody2D>().position;
         rigidbody2d = GetComponent<Rigidbody2D>();
+        GameObject.FindAnyObjectByType<Player>().Stick += ball_stick;
         
     }
   
@@ -26,25 +28,42 @@ public class Ball : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-     
-     if (collision.gameObject.GetComponent<Rigidbody2D>()) {
-            rigidbody2d.velocity = (rigidbody2d.velocity + collision.gameObject.GetComponent<Rigidbody2D>().velocity).normalized * rigidbody2d.velocity.magnitude;
+    
+    if (collision.gameObject.GetComponent<Rigidbody2D>().CompareTag("Player")) {
+            if(stick==false){
+                rigidbody2d.velocity = (rigidbody2d.velocity + collision.gameObject.GetComponent<Rigidbody2D>().velocity).normalized * rigidbody2d.velocity.magnitude;
+             }
+        }
+        else{
+            for (int i = 0; i < 3; i++)
+            {
+                StartCoroutine(wait());
+                rigidbody2d.velocity = (rigidbody2d.velocity + collision.gameObject.GetComponent<Rigidbody2D>().velocity).normalized * rigidbody2d.velocity.magnitude;
+            }
+            stick=false;
         }
         
 
 
     }
   
-   
+   private void ball_stick()
+   {
+        stick=true;
+   }
    
     
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
             if(collision.GetComponent<Collider2D>().gameObject.CompareTag("Topwall")){
          rigidbody2d.velocity = new Vector2(-rigidbody2d.velocity.x,-rigidbody2d.velocity.y);
             }
-    
+        
+
+
+        
 
     
 
@@ -71,7 +90,13 @@ public class Ball : MonoBehaviour
     }
         rigidbody2d.velocity =initalVelocity;
     }
-   
+   IEnumerator wait()
+   {
+    while(!Input.GetKeyDown(KeyCode.Space))
+    {
+        yield return null;
+    }
+   }
         
     
 }

@@ -21,9 +21,9 @@ public class Gamemaster : MonoBehaviour
 
     private void Awake()
     {
-      //  GameObject.FindAnyObjectByType<Brick>().Brickspawn += Gamemaster_Counter;
-       GameObject.FindAnyObjectByType<Brick>().Brickshit += Gamemaster_Brickshit;
-       // Brickspawn();
+      //GameObject.FindAnyObjectByType<Brick>().Brickspawn += Gamemaster_Counter;
+      //GameObject.FindAnyObjectByType<Brick>().Brickshit += Gamemaster_Brickshit;
+       //Brickspawn();
        print("awake");
 
 
@@ -67,17 +67,9 @@ public class Gamemaster : MonoBehaviour
 
     public void Brickspawn()
     {
-
         for (int i = 0; i < Brickamount + 1; i++)
         {
             Brickspawner?.Invoke(brickPrefab);
         }
-
-
     }
-    
-    
-
-
-
 }
