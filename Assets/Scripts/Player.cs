@@ -41,18 +41,15 @@ public void ApplyPowerup(Powerup.PowerupType powerup)
         switch (powerup)
         {
             case Powerup.PowerupType.stick:
-                print("hier invoke");
+                //working
                 Stick?.Invoke();
+                break;   
+
+            case Powerup.PowerupType.burning:                 
                 break;
-            
-            case Powerup.PowerupType.burning:
-                 print("B powerup");
-                break;
-            
             case Powerup.PowerupType.laser:
                  print("L powerup");
                 break;
-            
             default:
                 print("no");
                     break;

@@ -37,15 +37,10 @@ public class Ball : MonoBehaviour
             }
             
             else
-            {
-                for (int i = 0; i < 3; i++)
-                {
-                    print(rigidbody2d.velocity);
-                    Vector2 targetgeschwindigkeit=(rigidbody2d.velocity + collision.gameObject.GetComponent<Rigidbody2D>().velocity).normalized * rigidbody2d.velocity.magnitude;
-                    StartCoroutine (wait(targetgeschwindigkeit));
-                    
-                }
-                stick=false;
+            {               
+                Vector2 targetgeschwindigkeit=(rigidbody2d.velocity + collision.gameObject.GetComponent<Rigidbody2D>().velocity).normalized * rigidbody2d.velocity.magnitude;
+                StartCoroutine (wait(targetgeschwindigkeit));
+                
             }
         } 
 
@@ -54,7 +49,7 @@ public class Ball : MonoBehaviour
   
    private void ball_stick()
    {
-        print("ballstickistrue");
+        
         stick=true;
    }
    
@@ -62,16 +57,12 @@ public class Ball : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
- 
             if (collision.GetComponent<Collider2D>().gameObject.CompareTag("Killzone"))
             {               
               StartCoroutine(death());
-                
-            
-
-
         }   
     }
+    
     IEnumerator death()
     {
     rigidbody2d.velocity = new Vector2(rigidbody2d.velocity.x * 0, rigidbody2d.velocity.y * 0);
@@ -82,6 +73,8 @@ public class Ball : MonoBehaviour
     }
         rigidbody2d.velocity =initalVelocity;
     }
+   
+   
    IEnumerator wait(Vector2 targetgeschwindigkeit)
    {
     rigidbody2d.velocity=Vector2.zero;
@@ -89,8 +82,8 @@ public class Ball : MonoBehaviour
     {
         yield return null;
     }
-    print("solteweitegegeb");
     rigidbody2d.velocity=targetgeschwindigkeit;
+    stick=false;
    }
         
     
