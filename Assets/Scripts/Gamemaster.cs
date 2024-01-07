@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class Gamemaster : MonoBehaviour
 {
     private int lifepoints=3;
-    public int score = 0;    
+    public int score = -3;    
     private GameObject scoretrack;
     
 

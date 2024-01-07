@@ -30,7 +30,7 @@ public class Brick : MonoBehaviour
 
     private void Powerupspawn()
     {
-        if (powerupchance>=Random.Range(0,6))
+        if (powerupchance>=Random.Range(0,1))
         {
             Instantiate(powerup,transform.position,Quaternion.identity);
         }   

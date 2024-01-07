@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class BrickManager : MonoBehaviour
 {
     public int rows = 3;
-    public int columns = 5;
+    public int columns = 4;
 
     public float horizontalSpacing = 0.5f;
     public float verticalSpacing   = 0.25f;

@@ -1,4 +1,4 @@
-using System;
+
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -14,9 +14,14 @@ public class Powerup : MonoBehaviour
         laser,
         burning
     }
-
+    
     public PowerupType type;
     
+    private void Awake()
+    {
+    type=(PowerupType)Random.Range(0,3);
+
+    }
     private void OnCollisionEnter2D(UnityEngine.Collision2D collision)
     {
         if (!collision.gameObject.CompareTag("Player")) return;
