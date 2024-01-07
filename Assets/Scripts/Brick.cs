@@ -8,21 +8,20 @@ public class Brick : MonoBehaviour
 {
     public GameObject powerup;
     private float powerupchance = 0.3f;
-    public delegate void brickspawn();
-    public event brickspawn Brickspawn;
-    public delegate void brickhit();
-    public event brickhit Brickshit;
-    static int Brickamount;
-    
+   
+    public BrickManager brickManager;
+    public Gamemaster gamemaster;
 
     public void Awake()
     {
-        Brickamount++;
+        brickManager=GameObject.FindAnyObjectByType<BrickManager>();
+        gamemaster=Gamemaster.FindAnyObjectByType<Gamemaster>();
+        
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        Brickamount--;
-        Brickshit?.Invoke();
+        gamemaster.scoreincrease();
+        brickManager.OnBeforeBrickDestroy(this);
         Powerupspawn();
         Destroy(gameObject);
 
@@ -31,7 +30,7 @@ public class Brick : MonoBehaviour
 
     private void Powerupspawn()
     {
-        if (powerupchance>=Random.Range(0,1))
+        if (powerupchance>=Random.Range(0,6))
         {
             Instantiate(powerup,transform.position,Quaternion.identity);
         }   

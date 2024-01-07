@@ -10,15 +10,16 @@ public class Ball : MonoBehaviour
     public Vector2 initalVelocity;
     public Vector3 startingposition;
     
+    private Brick brick;
     private Player player;
+    private Gamemaster gamemaster;
     private void Awake()
-    {
-       
+    {       
         startingposition =GetComponent<Rigidbody2D>().position;
         rigidbody2d = GetComponent<Rigidbody2D>();
         player=GameObject.FindAnyObjectByType<Player>();
         player.PowerupEvent += OnPowerupEvent;
-        
+        gamemaster=GameObject.FindAnyObjectByType<Gamemaster>();
     }
   
    
@@ -60,7 +61,7 @@ public class Ball : MonoBehaviour
                 break;   
 
             case Powerup.PowerupType.burning:
-                             
+                  
                 break;
             case Powerup.PowerupType.laser:
                  print("L powerup");
@@ -78,13 +79,14 @@ public class Ball : MonoBehaviour
             if (collision.GetComponent<Collider2D>().gameObject.CompareTag("Killzone"))
             {               
               StartCoroutine(death());
-        }   
+            }   
     }
     
     IEnumerator death()
     {
     rigidbody2d.velocity = new Vector2(rigidbody2d.velocity.x * 0, rigidbody2d.velocity.y * 0);
     transform.position = startingposition;
+    gamemaster.gothit();
     while(!Input.GetKeyDown(KeyCode.Space))
     {
         yield return null;
