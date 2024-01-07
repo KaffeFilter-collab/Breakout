@@ -9,12 +9,15 @@ public class Ball : MonoBehaviour
     Rigidbody2D rigidbody2d;
     public Vector2 initalVelocity;
     public Vector3 startingposition;
+    
+    private Player player;
     private void Awake()
     {
        
         startingposition =GetComponent<Rigidbody2D>().position;
         rigidbody2d = GetComponent<Rigidbody2D>();
-        GameObject.FindAnyObjectByType<Player>().Stick += ball_stick;
+        player=GameObject.FindAnyObjectByType<Player>();
+        player.PowerupEvent += OnPowerupEvent;
         
     }
   
@@ -47,10 +50,25 @@ public class Ball : MonoBehaviour
 
     }
   
-   private void ball_stick()
+   private void OnPowerupEvent(Powerup.PowerupType powerup)
    {
-        
-        stick=true;
+        switch (powerup)
+        {
+            case Powerup.PowerupType.stick:
+                //working
+                stick=true;
+                break;   
+
+            case Powerup.PowerupType.burning:
+                             
+                break;
+            case Powerup.PowerupType.laser:
+                 print("L powerup");
+                break;
+            default:
+                print("no");
+                    break;
+        }
    }
    
     
@@ -80,11 +98,13 @@ public class Ball : MonoBehaviour
     rigidbody2d.velocity=Vector2.zero;
     while(!Input.GetKeyDown(KeyCode.Space))
     {
+        rigidbody2d.velocity=player.GetComponent<Rigidbody2D>().velocity;
         yield return null;
     }
     rigidbody2d.velocity=targetgeschwindigkeit;
     stick=false;
    }
-        
+    
+
     
 }

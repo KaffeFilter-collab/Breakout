@@ -10,8 +10,8 @@ public class Player : MonoBehaviour
     public float speed;
     public float input;
 
-    public delegate void stickdelegate();
-    public event stickdelegate Stick;
+    public delegate void Powerupdelegate(Powerup.PowerupType pow);
+    public event Powerupdelegate PowerupEvent;
     private void Awake()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
@@ -38,21 +38,6 @@ public class Player : MonoBehaviour
 
 public void ApplyPowerup(Powerup.PowerupType powerup)
     {
-        switch (powerup)
-        {
-            case Powerup.PowerupType.stick:
-                //working
-                Stick?.Invoke();
-                break;   
-
-            case Powerup.PowerupType.burning:                 
-                break;
-            case Powerup.PowerupType.laser:
-                 print("L powerup");
-                break;
-            default:
-                print("no");
-                    break;
-        }
+        PowerupEvent?.Invoke(powerup);
     }
 }
