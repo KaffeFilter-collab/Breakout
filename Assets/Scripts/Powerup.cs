@@ -9,7 +9,7 @@ public class Powerup : MonoBehaviour
     
      public enum PowerupType
     {
-        [HideInInspector]
+        
         stick,
         laser,
         burning
@@ -22,7 +22,7 @@ public class Powerup : MonoBehaviour
         if (!collision.gameObject.CompareTag("Player")) return;
         
         Player player = collision.gameObject.GetComponent<Player>();
-        player.ApplyPowerup(this);      
+        player.ApplyPowerup(type);      
         Destroy(gameObject);
         
          if (collision.gameObject.CompareTag("Killzone"))

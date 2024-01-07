@@ -36,11 +36,12 @@ public class Player : MonoBehaviour
          }
      
 
-public void ApplyPowerup(Powerup powerup)
+public void ApplyPowerup(Powerup.PowerupType powerup)
     {
-        switch (powerup.type)
+        switch (powerup)
         {
             case Powerup.PowerupType.stick:
+                print("hier invoke");
                 Stick?.Invoke();
                 break;
             

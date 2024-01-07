@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   brickPrefab: {fileID: -5914652653751153059, guid: 5688557bbfd60414b8f996be92c318ae, type: 3}
-  Brickamount: 0
+  Brickamount: 1
 --- !u!114 &2495919763307551807
 MonoBehaviour:
   m_ObjectHideFlags: 0

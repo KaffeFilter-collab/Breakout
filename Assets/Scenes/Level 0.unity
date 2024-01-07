@@ -192,18 +192,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gamemaster
       objectReference: {fileID: 0}
-    - target: {fileID: 3310507385280068054, guid: f58aed25c3817fb4aa5831dff5190190, type: 3}
-      propertyPath: AbstandX
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3310507385280068054, guid: f58aed25c3817fb4aa5831dff5190190, type: 3}
-      propertyPath: AbstandY
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3310507385280068054, guid: f58aed25c3817fb4aa5831dff5190190, type: 3}
-      propertyPath: Brickamount
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8639494132881680383, guid: f58aed25c3817fb4aa5831dff5190190, type: 3}
       propertyPath: m_LocalPosition.x
       value: 460.5
@@ -315,22 +303,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1882090015154172939, guid: 6e69c8e0094e6bc44befea4e778398ce, type: 3}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1882090015154172939, guid: 6e69c8e0094e6bc44befea4e778398ce, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 23.392576
-      objectReference: {fileID: 0}
-    - target: {fileID: 1882090015154172939, guid: 6e69c8e0094e6bc44befea4e778398ce, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.90277
-      objectReference: {fileID: 0}
-    - target: {fileID: 1882090015154172939, guid: 6e69c8e0094e6bc44befea4e778398ce, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.90277
-      objectReference: {fileID: 0}
-    - target: {fileID: 1882090015154172939, guid: 6e69c8e0094e6bc44befea4e778398ce, type: 3}
       propertyPath: m_LocalPosition.x
       value: -20.2
       objectReference: {fileID: 0}
@@ -374,10 +346,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Killzone
       objectReference: {fileID: 0}
-    - target: {fileID: 8942733309085532696, guid: 6e69c8e0094e6bc44befea4e778398ce, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -391,14 +359,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 265658087364494185, guid: f151d37704870c1499844f85a4004634, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -263
-      objectReference: {fileID: 0}
-    - target: {fileID: 265658087364494185, guid: f151d37704870c1499844f85a4004634, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 538
-      objectReference: {fileID: 0}
     - target: {fileID: 1476392214189805678, guid: f151d37704870c1499844f85a4004634, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -496,21 +456,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1363173441270682474, guid: e12a00f796825a74884af3def754b614, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1493897884462575808, guid: e12a00f796825a74884af3def754b614, type: 3}
       propertyPath: m_Name
       value: Collison wall top
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155091753190265230, guid: e12a00f796825a74884af3def754b614, type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155091753190265230, guid: e12a00f796825a74884af3def754b614, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 47.239403
       objectReference: {fileID: 0}
     - target: {fileID: 4155091753190265230, guid: e12a00f796825a74884af3def754b614, type: 3}
       propertyPath: m_LocalPosition.x
@@ -737,10 +685,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7488440221577560136, guid: 634a4a1e9e4a5764aa3115578b4bc08b, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7488440221577560136, guid: 634a4a1e9e4a5764aa3115578b4bc08b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -20.650002
       objectReference: {fileID: 0}
@@ -797,10 +741,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 898727559917332635, guid: 7783aa01fc7fba04b83ec6fab6e2db96, type: 3}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 898727559917332635, guid: 7783aa01fc7fba04b83ec6fab6e2db96, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

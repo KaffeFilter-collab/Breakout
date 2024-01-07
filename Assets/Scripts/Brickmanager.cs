@@ -19,17 +19,19 @@ public class BrickManager : MonoBehaviour
     {
         
             // instantiate bricks
-            for (int y = 0; y < rows; y++)
+    for (int y = 0; y < rows; y++)
             {
-                for (int x = 0; x < columns; x++)
+        for (int x = 0; x < columns; x++)
                 {
                     Brick newBrick = Instantiate(
                         brickPrefab,
                         transform.position + GetBrickLocalPosition(x, y),
                         Quaternion.identity);
 
+                   
+                   
                     newBrick.transform.SetParent(transform);
-                   //newBrick.SetBrickManager(this);
+                   
                 }
             }
         }
@@ -40,9 +42,7 @@ public class BrickManager : MonoBehaviour
     private Vector3 GetBrickLocalPosition(int x, int y)
     {
         return new Vector3(
-                        (brickPrefab.transform.localScale.x + horizontalSpacing) * x,
-                        -(brickPrefab.transform.localScale.y + verticalSpacing) * y,
-                        0);
+                        (brickPrefab.transform.localScale.x + horizontalSpacing) * x,-(brickPrefab.transform.localScale.y + verticalSpacing) * y,0);
     }
 
     public void OnBeforeBrickDestroy(Brick brick)
